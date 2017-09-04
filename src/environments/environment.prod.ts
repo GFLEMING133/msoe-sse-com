@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  content: {
+    websiteTitle: 'Society of Software Engineers'
+  }
 };
