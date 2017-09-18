@@ -14,7 +14,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { DxSchedulerModule } from 'devextreme-angular';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -37,5 +36,3 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
