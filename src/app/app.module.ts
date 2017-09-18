@@ -12,6 +12,9 @@ import { CalendarComponent } from './components/common/widgets/calendar/calendar
 import { IndexComponent } from './components/pages/index/index.component';
 import { RouterModule, Routes } from '@angular/router';
 import { routes } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { DxSchedulerModule } from 'devextreme-angular';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { routes } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    DxSchedulerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -32,3 +37,5 @@ import { routes } from './app.routes';
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
