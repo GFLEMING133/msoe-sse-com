@@ -4,14 +4,15 @@ export class HeaderSettings {
 
   private static headerLinksLeft: (HeaderLink|HeaderLinkDropdown)[] = [
     {
-      url: '#',
+      url: '/calendar',
       text: 'Calendar',
-      links: [
-        { url: '#', text: 'Hackathon' },
-        { url: '#', text: 'Source Trek' },
-        { url: '#', text: 'Open Source Projects' },
-        { url: '#', text: 'Mock Whiteboard Interview' }
-      ]
+      target: '_self'
+      // links: [
+      //   { url: '#', text: 'Hackathon' },
+      //   { url: '#', text: 'Source Trek' },
+      //   { url: '#', text: 'Open Source Projects' },
+      //   { url: '#', text: 'Mock Whiteboard Interview' }
+      // ]
     },
     { url: '#', text: 'Announcements' },
     { url: 'https://msoe-sse.slack.com/', text: 'Slack', target: '_blank' },
