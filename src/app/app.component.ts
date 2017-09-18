@@ -28,6 +28,6 @@ export class AppComponent {
       // oobCode
 
     // this.angularFireAuth.auth.applyActionCode()
-  //}
+  // }
 
 }
