@@ -14,6 +14,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { DxSchedulerModule } from 'devextreme-angular';
+import { AuthenticationService } from './services/authentication/authentication.service';
+import { AuthenticationGuard } from './services/authentication/authentication.guard';
+import { SigninComponent } from './components/common/authentication/signin/signin.component';
+import { RegisterComponent } from './components/common/authentication/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { DxSchedulerModule } from 'devextreme-angular';
     HeaderComponent,
     FooterComponent,
     CalendarComponent,
-    IndexComponent
+    IndexComponent,
+    SigninComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { DxSchedulerModule } from 'devextreme-angular';
     AngularFireAuthModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ FirebaseService ],
+  providers: [ FirebaseService, AuthenticationService, AuthenticationGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

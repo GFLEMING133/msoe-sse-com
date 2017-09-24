@@ -5,8 +5,7 @@ export class HeaderSettings {
   private static headerLinksLeft: (HeaderLink|HeaderLinkDropdown)[] = [
     {
       url: '/calendar',
-      text: 'Calendar',
-      target: '_self'
+      text: 'Calendar'
       // links: [
       //   { url: '#', text: 'Hackathon' },
       //   { url: '#', text: 'Source Trek' },
@@ -14,36 +13,36 @@ export class HeaderSettings {
       //   { url: '#', text: 'Mock Whiteboard Interview' }
       // ]
     },
-    { url: '#', text: 'Announcements' },
+    { url: '', text: 'Announcements' },
     { url: 'https://msoe-sse.slack.com/', text: 'Slack', target: '_blank' },
-    { url: '#', text: 'Discussions' }
+    { url: '', text: 'Discussions' }
   ];
 
   private static headerLinksRight: (HeaderLink|HeaderLinkDropdown)[] = [
     {
-      url: '#',
+      url: '',
       text: 'Jobs',
       links: [
-        { url: '#', text: 'All Jobs' },
-        { url: '#', text: 'My Postings' },
-        { url: '#', text: 'Post a Job' }
+        { url: '', text: 'All Jobs' },
+        { url: '', text: 'My Postings' },
+        { url: '', text: 'Post a Job' }
       ]
     },
     {
-      url: '#',
+      url: '',
       text: 'Members',
       links: [
-        { url: '#', text: 'Site-Wide Activity' },
-        { url: '#', text: 'Groups' }
+        { url: '', text: 'Site-Wide Activity' },
+        { url: '', text: 'Groups' }
       ]
     },
     {
-      url: '#',
+      url: '',
       text: 'About Us',
       links: [
-        { url: '#', text: 'Constitution' }
+        { url: '', text: 'Constitution' }
       ]
-    },
+    }
   ];
 
   public static headerLinks: HeaderLinkSet[] = [

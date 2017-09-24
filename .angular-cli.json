@@ -20,6 +20,7 @@
       "prefix": "sse",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
         "../node_modules/devextreme/dist/css/dx.common.css",
         "../node_modules/devextreme/dist/css/dx.light.css",
         "styles.css"
