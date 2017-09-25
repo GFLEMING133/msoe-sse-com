@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AuthenticationService } from '../../../../services/authentication/authentication.service';
+import { FieldConfig } from '../../../../models/common/forms/field-config.interface';
 
 @Component({
   selector: 'sse-signin',
@@ -8,15 +9,39 @@ import { AuthenticationService } from '../../../../services/authentication/authe
 })
 export class SigninComponent implements OnInit {
 
-  constructor(
-    private authenticationService: AuthenticationService
-  ) { }
+  public formConfig: FieldConfig[];
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.formConfig = [
+      {
+        name: 'email',
+        icon: 'fa-at',
+        placeholder: 'Enter email',
+        required: true,
+        type: 'text'
+      },
+      {
+        name: 'password',
+        icon: 'fa-key',
+        placeholder: 'Enter password',
+        required: true,
+        type: 'password'
+      },
+      {
+        name: 'signin',
+        icon: 'fa-sign-in',
+        label: 'Sign In',
+        type: 'button'
+      }
+    ];
+  }
 
   ngOnInit() {
   }
 
-  signIn(email, password, event) {
-    this.authenticationService.signIn(email, password);
+  submit(event: Event): void {
+    // email, password
+    this.authenticationService.signIn(event['email'], event['password']);
   }
 
 }

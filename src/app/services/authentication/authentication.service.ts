@@ -16,19 +16,23 @@ export class AuthenticationService {
     this.user$ = this.angularFireAuth.authState;
   }
 
-  register(email: string, password: string) {
+  register(email: string, password: string, displayName: string, phone: string) {
     this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user: firebase.User) => {
         if (!user.emailVerified) {
           user.sendEmailVerification();
         }
+        // TODO phone credentials?
+        user.updateProfile({displayName: displayName, photoURL: null});
       })
       .catch(error => console.log('unable to sign up', error));
   }
 
   forgotPassword(email: string) {
     this.angularFireAuth.auth.sendPasswordResetEmail(email)
-      .then(_ => console.log('email sent'))
+      .then(_ => {
+        this.router.navigate(['/signin']);
+      })
       .catch(error => console.log('reset password error', error));
   }
 
@@ -36,7 +40,6 @@ export class AuthenticationService {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
       .then(_ => {
         this.router.navigate(['/home']);
-        console.log('logged in!');
       })
       .catch(error => console.log('auth error', error));
   }

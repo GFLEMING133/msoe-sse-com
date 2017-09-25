@@ -15,9 +15,17 @@ import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { DxSchedulerModule } from 'devextreme-angular';
 import { AuthenticationService } from './services/authentication/authentication.service';
-import { AuthenticationGuard } from './services/authentication/authentication.guard';
+import { AuthenticationGuard } from './guards/authentication/authentication.guard';
 import { SigninComponent } from './components/common/authentication/signin/signin.component';
 import { RegisterComponent } from './components/common/authentication/register/register.component';
+import { DynamicFieldDirective } from './directives/dynamic-field.directive';
+import { FormButtonComponent } from './components/common/forms/controls/form-button/form-button.component';
+import { FormInputComponent } from './components/common/forms/controls/form-input/form-input.component';
+import { FormSelectComponent } from './components/common/forms/controls/form-select/form-select.component';
+import { DynamicFormComponent } from './components/common/forms/dynamic-form/dynamic-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ForgotPasswordComponent } from './components/common/authentication/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +35,23 @@ import { RegisterComponent } from './components/common/authentication/register/r
     CalendarComponent,
     IndexComponent,
     SigninComponent,
-    RegisterComponent
+    RegisterComponent,
+    DynamicFieldDirective,
+    FormButtonComponent,
+    FormInputComponent,
+    FormSelectComponent,
+    DynamicFormComponent,
+    ForgotPasswordComponent
+  ],
+  entryComponents: [
+    FormButtonComponent,
+    FormInputComponent,
+    FormSelectComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     DxSchedulerModule,

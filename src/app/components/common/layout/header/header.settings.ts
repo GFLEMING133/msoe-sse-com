@@ -13,13 +13,13 @@ export class HeaderSettings {
       //   { url: '#', text: 'Mock Whiteboard Interview' }
       // ]
     },
-    { url: '', text: 'Announcements' },
-    { url: 'https://msoe-sse.slack.com/', text: 'Slack', target: '_blank' },
-    { url: '', text: 'Discussions' }
+    // { url: '', text: 'Announcements' },
+    { url: 'https://msoe-sse.slack.com/', text: 'Slack', target: '_blank' }// ,
+    // { url: '', text: 'Discussions' }
   ];
 
   private static headerLinksRight: (HeaderLink|HeaderLinkDropdown)[] = [
-    {
+    /*{
       url: '',
       text: 'Jobs',
       links: [
@@ -42,7 +42,7 @@ export class HeaderSettings {
       links: [
         { url: '', text: 'Constitution' }
       ]
-    }
+    }*/
   ];
 
   public static headerLinks: HeaderLinkSet[] = [
