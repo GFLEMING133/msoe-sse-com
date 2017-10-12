@@ -9,11 +9,11 @@ export class AuthenticationGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private authencationService: AuthenticationService
+    private authenticationService: AuthenticationService
   ) { }
 
   canActivate(): Observable<boolean> {
-    return this.authencationService.user$
+    return this.authenticationService.user$
       .map(user => {
         if (user && user.uid) {
           console.log(user);
